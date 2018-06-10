@@ -1,0 +1,40 @@
+// Decompiled by Jad v1.5.8e. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.geocities.com/kpdus/jad.html
+// Decompiler options: braces fieldsfirst space lnc 
+
+package android.support.v7.widget;
+
+import android.support.v7.view.menu.ShowableListMenu;
+import android.view.View;
+
+// Referenced classes of package android.support.v7.widget:
+//            ForwardingListener, ActivityChooserView
+
+class it> extends ForwardingListener
+{
+
+    final ActivityChooserView this$0;
+
+    public ShowableListMenu getPopup()
+    {
+        return getListPopupWindow();
+    }
+
+    protected boolean onForwardingStarted()
+    {
+        showPopup();
+        return true;
+    }
+
+    protected boolean onForwardingStopped()
+    {
+        dismissPopup();
+        return true;
+    }
+
+    (View view)
+    {
+        this$0 = ActivityChooserView.this;
+        super(view);
+    }
+}
